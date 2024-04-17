@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_resumes",
+  "info": {
+    "displayName": "Resume",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "end": {
+      "type": "string"
+    },
+    "start": {
+      "type": "string",
+      "required": true
+    },
+    "endData": {
+      "type": "json",
+      "required": false
+    },
+    "logo": {
+      "type": "enumeration",
+      "enum": [
+        "logoPlanetaria",
+        "logoWorkDigital",
+        "logoInitGroup"
+      ],
+      "required": true
+    }
+  }
+}

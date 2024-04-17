@@ -1,0 +1,49 @@
+{
+   "GET /api/projects-page": {
+      "content-type": "plugin::github-projects.project",
+      "roles": {
+         "authenticated": {
+            "fields": [
+               "repositoryId",
+               "name",
+               "description",
+               "repositoryUrl",
+               "longDescription",
+               "createdAt",
+               "updatedAt",
+               "id"
+            ],
+            "populate": {
+               "logo": {
+                  "fields": [
+                     "name",
+                     "alternativeText",
+                     "url"
+                  ]
+               }
+            }
+         },
+         "public": {
+            "fields": [
+               "name",
+               "repositoryId",
+               "description",
+               "repositoryUrl",
+               "longDescription",
+               "createdAt",
+               "updatedAt",
+               "id"
+            ],
+            "populate": {
+               "logo": {
+                  "fields": [
+                     "name",
+                     "alternativeText",
+                     "url"
+                  ]
+               }
+            }
+         }
+      }
+   }
+}

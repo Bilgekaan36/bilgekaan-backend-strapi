@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_information_sections",
+  "info": {
+    "displayName": "Information Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.newsletter",
+      "required": false
+    },
+    "downloadButtonText": {
+      "type": "text",
+      "required": true
+    },
+    "resumeTitle": {
+      "type": "string",
+      "required": true
+    },
+    "resumes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.resume",
+      "required": true
+    }
+  }
+}

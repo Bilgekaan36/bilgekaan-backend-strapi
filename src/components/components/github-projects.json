@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_github_projects",
+  "info": {
+    "displayName": "GithubProject",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "logo": {
+      "type": "enumeration",
+      "enum": [
+        "logoPlanetaria",
+        "logoAnimaginary",
+        "logoHelioStream",
+        "logoCosmos",
+        "logoOpenShuttle"
+      ],
+      "required": true
+    },
+    "link": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
