@@ -12,13 +12,17 @@
         "GitHubIcon",
         "InstagramIcon",
         "LinkedInIcon",
-        "XIcon"
+        "XIcon",
+        "MailIcon"
       ],
       "required": true
     },
     "link": {
       "type": "string",
       "required": true
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "projects_pages",
+  "collectionName": "about_pages",
   "info": {
-    "singularName": "projects-page",
-    "pluralName": "projects-pages",
-    "displayName": "Projects Page",
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
     "description": ""
   },
   "options": {
@@ -13,23 +13,26 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
       "type": "text",
       "required": true
     },
-    "github_projects_projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::github-projects.project"
+    "description": {
+      "type": "richtext",
+      "required": true
     },
-    "githubProjects": {
+    "socialLinks": {
       "type": "component",
       "repeatable": true,
-      "component": "components.github-projects",
+      "component": "components.social-link",
       "required": true
+    },
+    "portrait": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "seo": {
       "type": "component",

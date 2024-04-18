@@ -824,6 +824,42 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Schema.SingleType {
+  collectionName: 'about_pages';
+  info: {
+    singularName: 'about-page';
+    pluralName: 'about-pages';
+    displayName: 'About Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.Text & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    socialLinks: Attribute.Component<'components.social-link', true> &
+      Attribute.Required;
+    portrait: Attribute.Media & Attribute.Required;
+    seo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -857,6 +893,44 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiArticlesPageArticlesPage extends Schema.SingleType {
+  collectionName: 'articles_pages';
+  info: {
+    singularName: 'articles-page';
+    pluralName: 'articles-pages';
+    displayName: 'Articles Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    articles: Attribute.Relation<
+      'api::articles-page.articles-page',
+      'oneToMany',
+      'api::article.article'
+    >;
+    seo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::articles-page.articles-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::articles-page.articles-page',
       'oneToOne',
       'admin::user'
     > &
@@ -969,6 +1043,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'Home Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1023,6 +1098,7 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
     >;
     githubProjects: Attribute.Component<'components.github-projects', true> &
       Attribute.Required;
+    seo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1034,6 +1110,91 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::projects-page.projects-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeoConfigSeoConfig extends Schema.SingleType {
+  collectionName: 'seo_configs';
+  info: {
+    singularName: 'seo-config';
+    pluralName: 'seo-configs';
+    displayName: 'seoConfig';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    defaultSeo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-config.seo-config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-config.seo-config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiToolTool extends Schema.CollectionType {
+  collectionName: 'tools';
+  info: {
+    singularName: 'tool';
+    pluralName: 'tools';
+    displayName: 'Tool';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tool.tool', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tool.tool', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUsesPageUsesPage extends Schema.SingleType {
+  collectionName: 'uses_pages';
+  info: {
+    singularName: 'uses-page';
+    pluralName: 'uses-pages';
+    displayName: 'Uses Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    Tools: Attribute.Component<'layout.tool-section', true>;
+    seo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::uses-page.uses-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::uses-page.uses-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1060,12 +1221,17 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::article.article': ApiArticleArticle;
+      'api::articles-page.articles-page': ApiArticlesPageArticlesPage;
       'api::author.author': ApiAuthorAuthor;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
+      'api::seo-config.seo-config': ApiSeoConfigSeoConfig;
+      'api::tool.tool': ApiToolTool;
+      'api::uses-page.uses-page': ApiUsesPageUsesPage;
     }
   }
 }

@@ -76,10 +76,11 @@ export interface ComponentsSocialLink extends Schema.Component {
   };
   attributes: {
     socialMedia: Attribute.Enumeration<
-      ['GitHubIcon', 'InstagramIcon', 'LinkedInIcon', 'XIcon']
+      ['GitHubIcon', 'InstagramIcon', 'LinkedInIcon', 'XIcon', 'MailIcon']
     > &
       Attribute.Required;
     link: Attribute.String & Attribute.Required;
+    description: Attribute.String;
   };
 }
 
@@ -121,6 +122,33 @@ export interface LayoutPhotosSection extends Schema.Component {
   };
 }
 
+export interface LayoutToolSection extends Schema.Component {
+  collectionName: 'components_layout_tool_sections';
+  info: {
+    displayName: 'Tool Section';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    tools: Attribute.Relation<
+      'layout.tool-section',
+      'oneToMany',
+      'api::tool.tool'
+    >;
+  };
+}
+
+export interface SeoSeoInformation extends Schema.Component {
+  collectionName: 'components_seo_seo_informations';
+  info: {
+    displayName: 'SeoInformation';
+  };
+  attributes: {
+    seoTitle: Attribute.String;
+    seoDescription: Attribute.Text;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -132,6 +160,8 @@ declare module '@strapi/types' {
       'layout.hero-section': LayoutHeroSection;
       'layout.information-section': LayoutInformationSection;
       'layout.photos-section': LayoutPhotosSection;
+      'layout.tool-section': LayoutToolSection;
+      'seo.seo-information': SeoSeoInformation;
     }
   }
 }

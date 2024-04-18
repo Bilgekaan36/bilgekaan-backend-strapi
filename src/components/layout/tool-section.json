@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_tool_sections",
+  "info": {
+    "displayName": "Tool Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tool.tool"
+    }
+  }
+}

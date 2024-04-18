@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "projects_pages",
+  "collectionName": "uses_pages",
   "info": {
-    "singularName": "projects-page",
-    "pluralName": "projects-pages",
-    "displayName": "Projects Page",
+    "singularName": "uses-page",
+    "pluralName": "uses-pages",
+    "displayName": "Uses Page",
     "description": ""
   },
   "options": {
@@ -20,16 +20,10 @@
       "type": "text",
       "required": true
     },
-    "github_projects_projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::github-projects.project"
-    },
-    "githubProjects": {
+    "Tools": {
       "type": "component",
       "repeatable": true,
-      "component": "components.github-projects",
-      "required": true
+      "component": "layout.tool-section"
     },
     "seo": {
       "type": "component",
