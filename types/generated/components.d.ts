@@ -11,11 +11,18 @@ export interface ComponentsGithubProjects extends Schema.Component {
     description: Attribute.Text & Attribute.Required;
     logo: Attribute.Enumeration<
       [
-        'logoPlanetaria',
-        'logoAnimaginary',
-        'logoHelioStream',
-        'logoCosmos',
-        'logoOpenShuttle'
+        'planetaria',
+        'animaginary',
+        'helio-stream',
+        'cosmos',
+        'open-shuttle',
+        'GithubIcon',
+        'logoOne',
+        'logoSecond',
+        'logoThird',
+        'logoFourth',
+        'logoFifth',
+        'logoSixt'
       ]
     > &
       Attribute.Required;
@@ -61,9 +68,7 @@ export interface ComponentsResume extends Schema.Component {
     end: Attribute.String;
     start: Attribute.String & Attribute.Required;
     endData: Attribute.JSON;
-    logo: Attribute.Enumeration<
-      ['logoPlanetaria', 'logoWorkDigital', 'logoInitGroup']
-    > &
+    logo: Attribute.Enumeration<['planetaria', 'workdigital', 'initgroup']> &
       Attribute.Required;
   };
 }

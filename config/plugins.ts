@@ -1,1 +1,7 @@
-export default () => ({});
+export default () => ({
+  dashboard: {
+    enabled: true,
+    resolve: "./src/plugins/dashboard",
+    visible: false,
+  },
+});

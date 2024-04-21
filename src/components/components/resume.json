@@ -28,9 +28,9 @@
     "logo": {
       "type": "enumeration",
       "enum": [
-        "logoPlanetaria",
-        "logoWorkDigital",
-        "logoInitGroup"
+        "planetaria",
+        "workdigital",
+        "initgroup"
       ],
       "required": true
     }

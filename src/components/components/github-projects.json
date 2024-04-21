@@ -17,11 +17,18 @@
     "logo": {
       "type": "enumeration",
       "enum": [
-        "logoPlanetaria",
-        "logoAnimaginary",
-        "logoHelioStream",
-        "logoCosmos",
-        "logoOpenShuttle"
+        "planetaria",
+        "animaginary",
+        "helio-stream",
+        "cosmos",
+        "open-shuttle",
+        "GithubIcon",
+        "logoOne",
+        "logoSecond",
+        "logoThird",
+        "logoFourth",
+        "logoFifth",
+        "logoSixt"
       ],
       "required": true
     },

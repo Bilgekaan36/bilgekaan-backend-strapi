@@ -28,7 +28,15 @@ export default {
       // 'zh-Hans',
       // 'zh',
     ],
+    translations: {
+      en: {
+        "Auth.form.welcome.title": "Welcome to Your App!",
+        "Auth.form.welcome.subtitle": "Log in to your App",
+        "app.components.LeftMenu.navbrand.title": "Dashboard",
+      },
+    },
   },
+  tutorials: false,
   bootstrap(app: any) {
     console.log(app);
   },
