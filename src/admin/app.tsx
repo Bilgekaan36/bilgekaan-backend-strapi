@@ -38,6 +38,6 @@ export default {
   },
   tutorials: false,
   bootstrap(app: any) {
-    console.log(app);
+    // console.log(app);
   },
 };
