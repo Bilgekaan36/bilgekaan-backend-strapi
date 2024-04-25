@@ -2,6 +2,6 @@
  * projects-page router
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from "@strapi/strapi";
 
-export default factories.createCoreRouter('api::projects-page.projects-page');
+export default factories.createCoreRouter("api::projects-page.projects-page");

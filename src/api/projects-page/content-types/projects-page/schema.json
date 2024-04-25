@@ -20,11 +20,6 @@
       "type": "text",
       "required": true
     },
-    "github_projects_projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::github-projects.project"
-    },
     "githubProjects": {
       "type": "component",
       "repeatable": true,

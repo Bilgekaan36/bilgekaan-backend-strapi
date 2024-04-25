@@ -38,7 +38,7 @@ const App = () => {
         <div class="sc-bdvvtL eMEmwh">
           <div class="sc-bdvvtL sc-gsDKAQ bOQZK WlUdp">
             <div aria-hidden="true" tabindex="-1" class="sc-kQoPux iBWDdc">
-              <img src="http://localhost:1337/uploads/cosmos_3e710dd725.svg" alt="Application logo">
+              <img src="https://bilgekaan-portfolio-backend-strapi.onrender.com/uploads/cosmos_3e710dd725.svg" alt="Application logo">
             </div>
             <div class="sc-bdvvtL bqRyns">
               <span class="sc-dkPtRN bldYXz">Dashboard<span class="sc-iCfMLu gejpLQ">Workplace</span></span>

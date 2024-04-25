@@ -15,7 +15,6 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@bilgekaan36/strapi-plugin-github-projects": "^1.1.1",
     "@strapi/plugin-cloud": "4.23.0",
     "@strapi/plugin-i18n": "4.23.0",
     "@strapi/plugin-users-permissions": "4.23.0",

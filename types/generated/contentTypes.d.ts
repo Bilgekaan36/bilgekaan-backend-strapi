@@ -590,42 +590,6 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
-export interface PluginGithubProjectsProject extends Schema.CollectionType {
-  collectionName: 'projects';
-  info: {
-    singularName: 'project';
-    pluralName: 'projects';
-    displayName: 'Project';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    repositoryId: Attribute.UID<'plugin::github-projects.project', 'name'> &
-      Attribute.Unique;
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.String;
-    repositoryUrl: Attribute.String;
-    longDescription: Attribute.RichText;
-    logo: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::github-projects.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::github-projects.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -1091,11 +1055,6 @@ export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    github_projects_projects: Attribute.Relation<
-      'api::projects-page.projects-page',
-      'oneToMany',
-      'plugin::github-projects.project'
-    >;
     githubProjects: Attribute.Component<'components.github-projects', true> &
       Attribute.Required;
     seo: Attribute.Component<'seo.seo-information'> & Attribute.Required;
@@ -1216,7 +1175,6 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
-      'plugin::github-projects.project': PluginGithubProjectsProject;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
